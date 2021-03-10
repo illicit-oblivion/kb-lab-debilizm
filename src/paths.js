@@ -1,9 +1,13 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-export const privateDir = path.resolve('../data/privateFiles');
-export const publicDir = path.resolve('../data/publicFiles');
-export const intruderDir = path.resolve('../data/intruderFiles');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+
+export const privateDir = path.resolve(path.join(__dirname,'../data/privateFiles'));
+export const publicDir = path.resolve(path.join(__dirname,'../data/publicFiles'));
+export const intruderDir = path.resolve(path.join(__dirname,'../data/intruderFiles'));
 
 export function ensurePublicDirExists() {
   ensureDirExists(publicDir);
