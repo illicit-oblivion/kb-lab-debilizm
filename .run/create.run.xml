@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="create" type="NodeJSConfigurationType" application-parameters="create asd" path-to-js-file="user.js" working-dir="$PROJECT_DIR$/bin">
+  <configuration default="false" name="create" type="NodeJSConfigurationType" application-parameters="create asd" path-to-js-file="user.mjs" working-dir="$PROJECT_DIR$/bin">
     <method v="2" />
   </configuration>
 </component>

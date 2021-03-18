@@ -1,23 +1,19 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const fs = require('fs');
+const path = require('path');
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const privateDir = path.resolve(path.join(__dirname,'../data/privateFiles'));
+const publicDir = path.resolve(path.join(__dirname,'../data/publicFiles'));
+const intruderDir = path.resolve(path.join(__dirname,'../data/intruderFiles'));
 
-
-export const privateDir = path.resolve(path.join(__dirname,'../data/privateFiles'));
-export const publicDir = path.resolve(path.join(__dirname,'../data/publicFiles'));
-export const intruderDir = path.resolve(path.join(__dirname,'../data/intruderFiles'));
-
-export function ensurePublicDirExists() {
+function ensurePublicDirExists() {
   ensureDirExists(publicDir);
 }
 
-export function ensurePrivateDirExists() {
+function ensurePrivateDirExists() {
   ensureDirExists(privateDir);
 }
 
-export function ensureIntruderDirExists() {
+function ensureIntruderDirExists() {
   ensureDirExists(intruderDir);
 }
 
@@ -25,4 +21,13 @@ function ensureDirExists(dir) {
   fs.mkdirSync(dir, {
     recursive: true,
   })
+}
+
+module.exports = {
+  privateDir,
+  publicDir,
+  intruderDir,
+  ensurePublicDirExists,
+  ensurePrivateDirExists,
+  ensureIntruderDirExists,
 }

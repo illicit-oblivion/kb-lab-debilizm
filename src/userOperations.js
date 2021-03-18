@@ -1,8 +1,8 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import {ensurePrivateDirExists, ensurePublicDirExists, privateDir, publicDir} from "./paths.js";
+const fs = require('fs');
+const path = require('path');
+const {ensurePrivateDirExists, ensurePublicDirExists, privateDir, publicDir} = require("./paths.js");
 
-export function createFile(
+function createFile(
   name,
   contents,
 ) {
@@ -10,14 +10,26 @@ export function createFile(
   fs.writeFileSync(path.join(privateDir, name), contents);
 }
 
-export function listFiles() {
+function listFiles() {
   ensurePrivateDirExists();
   return [...fs.readdirSync(privateDir)];
 }
 
-export function publishFile(
+function listPublicFiles() {
+  ensurePublicDirExists();
+  return [...fs.readdirSync(publicDir)];
+}
+
+function publishFile(
   name,
 ) {
   ensurePublicDirExists();
   fs.renameSync(path.join(privateDir, name), path.join(publicDir, name));
+}
+
+module.exports = {
+  createFile,
+  listFiles,
+  publishFile,
+  listPublicFiles
 }

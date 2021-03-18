@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User GUI</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <style>
+        #private-list button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body style="background: white;">
+<h2>User GUI</h2>
+<form>
+    <label for="filename">file name</label>
+    <input type="text" id="filename" name="filename" />
+    <br />
+    <br />
+    <label for="contents">contents</label>
+    <textarea id="contents" name="contents"></textarea>
+    <br />
+    <br />
+    <button>Create</button>
+</form>
+<hr>
+<div>
+    <div>Private files</div>
+    <ul id="private-list">
+    </ul>
+</div>
+<hr>
+<div>
+    <div>Public files</div>
+    <ul id="public-list"></ul>
+</div>
+</body>
+</html>

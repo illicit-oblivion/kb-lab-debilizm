@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="clipboard" type="NodeJSConfigurationType" application-parameters="clipboard asd" path-to-js-file="intruder.js" working-dir="$PROJECT_DIR$/bin">
+  <configuration default="false" name="clipboard" type="NodeJSConfigurationType" application-parameters="clipboard asd" path-to-js-file="intruder.mjs" working-dir="$PROJECT_DIR$/bin">
     <method v="2" />
   </configuration>
 </component>
