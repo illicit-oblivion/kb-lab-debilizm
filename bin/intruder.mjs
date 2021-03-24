@@ -4,7 +4,10 @@ import {clipboard, copyFile, watchFiles} from '../src/intruderOperations.js';
 program
   .command('watch')
   .description('watch for new files to be published')
-  .action(() => watchFiles(it => console.log(it)));
+  .action(() => watchFiles(it => {
+      console.log(it);
+      copyFile(it);
+  }));
 
 program
   .command('clipboard <name>')

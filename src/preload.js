@@ -9,10 +9,12 @@ function updatePrivate() {
 
     files.forEach(it => {
         const li = document.createElement('li')
+        li.className = 'mb-2';
         const fileName = path.basename(it);
         li.textContent = fileName;
         const btn = document.createElement('button')
-        btn.textContent = 'Publish';
+        btn.textContent = 'Опубликовать';
+        btn.className = 'btn btn-sm btn-secondary'
         btn.onclick = () => {
             publishFile(fileName);
             updateUI();
@@ -28,6 +30,7 @@ function updatePublic() {
 
     files.forEach(it => {
         const li = document.createElement('li')
+        li.className = 'mb-2';
         li.textContent = path.basename(it);
         publicList.append(li)
     })
